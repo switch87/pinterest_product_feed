@@ -6,7 +6,7 @@
     'author': 'Jouw Naam',
     'website': 'https://www.jouw-bedrijf.nl',
     'license': 'LGPL-3',
-    'depends': ['website', 'sale'],
+    'depends': ['website', 'sale', 'product_brand'],
     'data': [
         'security/ir.model.access.csv',
         'views/feed_config_view.xml',

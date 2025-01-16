@@ -30,7 +30,7 @@ class PinterestProductFeedController(http.Controller):
         products = request.env['product.product'].sudo().search([
             ('sale_ok', '=', True),
             ('product_tmpl_id.website_published', '=', True),
-            ('product_tmpl_id.website_ids', 'in', website_id)
+            ('product_tmpl_id.website_id', '=', website_id)
         ])
 
         # 4. CSV genereren
@@ -66,7 +66,7 @@ class PinterestProductFeedController(http.Controller):
             ])
 
             # Optionele velden
-            brand = product.product_tmpl_id.brand_id.name if product.product_tmpl_id.brand_id else ''
+            brand = product.product_tmpl_id.product_brand_id.name if product.product_tmpl_id.product_brand_id else ''
             size = ', '.join([value.name for value in product.product_template_attribute_value_ids if value.attribute_id.name.lower() == 'size'])
             custom_label_0 = 'Bestseller'
 
