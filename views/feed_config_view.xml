@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pinterest_product_feed_config_form" model="ir.ui.view">
+        <field name="name">pinterest.product.feed.config.form</field>
+        <field name="model">pinterest.product.feed.config</field>
+        <field name="arch" type="xml">
+            <form string="Pinterest Product Feed Config">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="website_id"/>
+                        <field name="feed_token" placeholder="Unieke token"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_pinterest_product_feed_config_tree" model="ir.ui.view">
+        <field name="name">pinterest.product.feed.config.tree</field>
+        <field name="model">pinterest.product.feed.config</field>
+        <field name="arch" type="xml">
+            <tree string="Pinterest Product Feed Config">
+                <field name="name"/>
+                <field name="website_id"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_pinterest_product_feed_config" model="ir.actions.act_window">
+        <field name="name">Pinterest Product Feed Config</field>
+        <field name="res_model">pinterest.product.feed.config</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Beheer hier je Pinterest Product Feeds per website.</p>
+        </field>
+    </record>
+
+    <menuitem id="menu_pinterest_product_feed_config" 
+              name="Pinterest Product Feed"
+              parent="website.menu_website_configuration"
+              action="action_pinterest_product_feed_config"
+              sequence="99"/>
+</odoo>
