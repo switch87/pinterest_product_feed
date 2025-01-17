@@ -1,16 +1,16 @@
+
 {
-    'name': 'Pinterest Product Feed',
-    'version': '15.0.1.0.0',
+    'name': 'Snakebyte E-Commerce Product Feed',
+    'version': '1.0',
+    'summary': 'Unified management for Facebook, Google, and Pinterest product feeds',
+    'author': 'Gert Pellin',
     'category': 'Website',
-    'summary': 'Genereer een productfeed voor Pinterest Catalogs.',
-    'author': 'Jouw Naam',
-    'website': 'https://www.jouw-bedrijf.nl',
-    'license': 'LGPL-3',
-    'depends': ['website', 'sale', 'product_brand'],
+    'depends': ['website'],
     'data': [
         'security/ir.model.access.csv',
-        'views/feed_config_view.xml',
+        'views/feed_config_view.xml'
     ],
     'installable': True,
-    'application': False,
+    'application': True,
+    'auto_install': False,
 }
